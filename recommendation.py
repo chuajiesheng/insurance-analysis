@@ -91,7 +91,7 @@ for key in people.keys():
     for c in CATEGORIES:
         diff[c] = center[c] - data[c]
 
-    result = max(diff, key=diff.get)
+    result = min(diff, key=diff.get)
 
     with open(PREDICT_FILE, 'a') as f:
         f.write('{},{}\n'.format(key, result))
